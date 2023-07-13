@@ -521,14 +521,13 @@ margin-left: 50px !important;
         justify-content: space-around;
     }
 
-
-
     .footer{
-    
         padding: 10px !important;
         font-size: .5rem;
         align-items: center;
         height: 28vh;
+        margin-top: auto;
+        margin-bottom: auto;
     }
     .mini-logo{
         width: 30%;
