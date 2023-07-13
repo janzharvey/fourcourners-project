@@ -524,9 +524,11 @@ margin-left: 50px !important;
 
 
     .footer{
-        padding: 10px;
+    
+        padding: 10px !important;
         font-size: .5rem;
         align-items: center;
+        height: 28vh;
     }
     .mini-logo{
         width: 30%;
@@ -534,7 +536,7 @@ margin-left: 50px !important;
         margin-right: auto;
     }
     .icons{
-        font-size: .5rem;
+        font-size: 1.1rem;
         margin: 5px;
     }
 
