@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="styles.css" rel="stylesheet">
+    <link href="offerstyles.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="icon" type="image/x-icon" href="images/icon.ico">
@@ -34,90 +34,42 @@
     </header>
 
     <main>
-        <section class="homepage" id="homepage">
-            <div class="image-slider">
-                <div class="slide active">
-                    <img src="images/PICTURE1.png" alt="">
-                </div>
-                <div class="slide">
-                    <img src="images/PICTURE2.png" alt="">
-                </div>
-                <div class="slide">
-                    <img src="images/PICTURE3.png" alt="">
-                </div>
-                <div class="slide">
-                    <img src="images/PICTURE4.png" alt="">
-                </div>
-                <div class="slide">
-                    <img src="images/PICTURE5.png" alt="">
-                </div>
-                <div class="slide">
-                    <img src="images/PICTURE6.png" alt="">
-                </div>
-
-                <div class="navigation">
-                    <div class="butn1 active"></div>
-                    <div class="butn1"></div>
-                    <div class="butn1"></div>
-                    <div class="butn1"></div>
-                    <div class="butn1"></div>
-                    <div class="butn1"></div>
-                </div>
-            </div>
-        </section> 
+   
         <section class="program" id="program">
             <div class="heading-container">
                 <h1 class="heading">WHAT WE OFFER</h1>
                 <p class="sub-heading">Join our engaging academic tutorial designed specifically for young kids, where they can explore and enhance their learning skills through fun and interactive activities.</p>
             </div>
             <div class="program-container">
-                <div class="card-container">
-                    <div class="card">
-                        <img src="images/photo1.jpg" alt="">
-                        <div class="info-container">
-                            <h1>ACADEMIC TUTORIAL</h1>
+                <div class="academic-container">
+                    <div class="card-container">
+                        <div class="card">
+                            <img src="images/ACAD1.png" alt="">
+                            <div class="info-container">
+                                <h1>ACADEMIC TUTORIAL</h1>
+                            </div>
+                        </div>
+                        <div class="program-info">
+                            <h1 class="about-info">Join our engaging academic tutorial designed specifically for young kids, where they can explore and enhance their learning skills through fun and interactive activities.</h1>
                         </div>
                     </div>
-
-                    <div class="card">
-                        <img src="images/fun.jpg" alt="">
-                        <div class="info-container">
-                            <h1>INTERACTIVE ACTIVITY</h1>
-                        </div>
+                    
+                </div>
+                <div class="interactive-container">
+                    <div class="card-container">
+                        <div class="card">
+                            <img src="images/FUN1.png" alt="">
+                            <div class="info-container">
+                                <h1>INTERACTIVE ACTIVITY</h1>                         
+                        </div>                    
+                    </div>
+                    <div class="program-info">
+                        <h1 class="about-info">Join our engaging academic tutorial designed specifically for young kids, where they can explore and enhance their learning skills through fun and interactive activities.</h1>
                     </div>
                 </div>
+                
             </div>
         </section> 
-        <section class="about" id="about">
-            <h1 class="heading">ABOUT US</h1>
-            <div class="about-container">
-                <div class="staff-container">
-                    <div class="staff">
-                        <div class="image-holder"><img src="images/profile2.jpg" alt=""></div>
-                        <div class="position">
-                            <h2 class="staff-name">Neslyn Perez</h2>
-                            <p class="staff-position">Owner - Teacher/Tutor</p>
-                        </div>
-                        
-                    </div>
-                    <div class="staff">
-                        <div class="image-holder"><img src="images/profile1.jpg" alt=""></div>
-                        <div class="position">
-                            <h2 class="staff-name">Leslie De Guzman</h2>
-                            <p class="staff-position">Owner - Manager
-
-                                
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="info">
-                    <h1 class="about-info">Four Corners Tutorial Center is a premiere institute that focuses on providing its students with quality Education. As a recently established tutorial center, We understand the unique needs of young learners and are equipped with the skills to help them succeed. With a focus on personalized attention and engaging lesson plans, Our tutors are dedicated to providing a high-quality education to each student. </h1>
-                    <a href="about.html" class="learn_btn">Learn More</a>
-                </div>
-
-            </div>
-        </section>  
 
         <div class="footer">
             <div class="container">
@@ -148,57 +100,44 @@
     <script type="text/javascript">
         var slides = document.querySelectorAll('.slide');
         var btns = document.querySelectorAll('.butn');
+        var slides1 = document.querySelectorAll('.slide1');
+        var btns1 = document.querySelectorAll('.butn1');
         let currentSlide = 1;
-
-        var manualNav = function(manual){
-            slides.forEach((slide) => {
-                slide.classList.remove('active');
-            
-                btns.forEach((butn)=> {
-                    butn.classList.remove('active');
-                });  
-               
-            });
-            slides[manual].classList.add('active');
-            btns[manual].classList.add('active');
-        }
-
-        btns.forEach((butn, i) => {
-            butn.addEventListener("click", ()=> {
-                manualNav(i);
-                currentSlide = i;
-            });
-        });
-    
-    
+        
         var repeat = function(activeClass){
             let active = document.getElementsByClassName('active');
             let i = 1;
+            let j = 1;
 
             var repeater = () => {
             setTimeout(function(){
                 [...active].forEach((activeSlide) => {
                     activeSlide.classList.remove('active');
+                    
                 });
 
                 slides[i].classList.add('active');
-                btns[i].classList.add('active');
+                btns[i].classList.add('active');          
                 i++;
+            
 
                 if(slides.length == i){
                     i = 0;
+              
                 }
-                if(i >= slides.length){
+                if(i >= slides.length ){
                     return;
                 }
+               
                 repeater();
 
-            }, 4000);
+            }, 1000);
         }
         repeater();
         }
         repeat();
     </script>
+ 
     <script>
         const toggleBtn = document.querySelector('.toggle_btn');
         const toggleBtnIcon = document.querySelector('.toggle_btn i');
